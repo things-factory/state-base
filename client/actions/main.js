@@ -1,0 +1,1 @@
+export const UPDATE_STATE_BASE = 'UPDATE_STATE_BASE'
