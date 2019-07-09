@@ -1,5 +1,6 @@
-import { Entity, Index, Column, OneToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { Domain, DomainBaseEntity } from '@things-factory/shell'
+import { User } from '@things-factory/auth-base'
+import { Domain } from '@things-factory/shell'
+import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity('state-transitions')
 @Index('ix_state-transition_0', (stateTransition: StateTransition) => [stateTransition.domain, stateTransition.name], {
@@ -10,7 +11,7 @@ import { Domain, DomainBaseEntity } from '@things-factory/shell'
   stateTransition.from,
   stateTransition.action
 ])
-export class StateTransition extends DomainBaseEntity {
+export class StateTransition {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
@@ -28,4 +29,20 @@ export class StateTransition extends DomainBaseEntity {
 
   @Column('text')
   action: string
+
+  @ManyToOne(type => User, {
+    nullable: true
+  })
+  creator: User
+
+  @ManyToOne(type => User, {
+    nullable: true
+  })
+  updater: User
+
+  @CreateDateColumn()
+  createdAt: Date
+
+  @UpdateDateColumn()
+  updatedAt: Date
 }
