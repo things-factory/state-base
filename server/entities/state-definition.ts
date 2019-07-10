@@ -2,7 +2,7 @@ import { User } from '@things-factory/auth-base'
 import { Domain } from '@things-factory/shell'
 import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 
-@Entity('state-definitions')
+@Entity()
 @Index('ix_state-definition_0', (stateDefinition: StateDefinition) => [stateDefinition.domain, stateDefinition.name], {
   unique: true
 })
