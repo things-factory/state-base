@@ -13,15 +13,15 @@ export class StateDefinition {
   @ManyToOne(type => Domain)
   domain: Domain
 
-  @Column('text')
+  @Column()
   name: string
 
-  @Column('text', {
+  @Column({
     nullable: true
   })
   description: string
 
-  @Column('text')
+  @Column()
   initialState: string
 
   @ManyToOne(type => User, {

@@ -18,16 +18,16 @@ export class StateTransition {
   @ManyToOne(type => Domain)
   domain: Domain
 
-  @Column('text')
+  @Column()
   name: string
 
-  @Column('text')
+  @Column()
   from: string
 
-  @Column('text')
+  @Column()
   to: string
 
-  @Column('text')
+  @Column()
   action: string
 
   @ManyToOne(type => User, {
