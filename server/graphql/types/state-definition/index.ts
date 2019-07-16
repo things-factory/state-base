@@ -15,10 +15,6 @@ export const Mutation = `
   deleteStateDefinition (
     id: String!
   ): StateDefinition
-
-  publishStateDefinition (
-    id: String!
-  ): StateDefinition
 `
 
 export const Query = `

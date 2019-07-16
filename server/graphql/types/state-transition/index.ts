@@ -15,10 +15,6 @@ export const Mutation = `
   deleteStateTransition (
     id: String!
   ): StateTransition
-
-  publishStateTransition (
-    id: String!
-  ): StateTransition
 `
 
 export const Query = `
