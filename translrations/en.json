@@ -1,0 +1,6 @@
+{
+  "field.initial_state": "initial_state",
+  "field.from": "from",
+  "field.to": "to",
+  "field.action": "action"
+}
